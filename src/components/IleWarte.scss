@@ -1,0 +1,245 @@
+.Hair-trade-ile-warte {
+    width: 100%;
+    background: linear-gradient(90deg, rgba(82, 44, 16, 0.3) 0%, rgba(109, 71, 37, 0.3) 50%, rgba(60, 35, 18, 0.3) 97.99%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .ile-warte-content {
+        width: 1116px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 68px;
+
+        .left {
+            grid-template-columns: 1/2;
+
+            h2 {
+                font-size: 32px;
+                font-weight: 700;
+            }
+
+            p {
+                font-size: 400;
+                font-weight: 400;
+                margin-top: 24px;
+            }
+
+            img {
+                margin-left: -25px;
+            }
+        }
+
+        .right {
+            grid-template-columns: 2/3;
+
+            .formularz {
+                display: flex;
+                justify-content: flex-end;
+
+                .hair-value-form {
+                    background-color: #fff;
+                    padding: 28px 71px 58px 70px;
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    max-width: 545px;
+
+
+                    h2 {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+
+                    .hair-type {
+                        margin-top: 18px;
+
+                        label {
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
+
+                        .hair-type-options {
+                            display: flex;
+                            border: 1px solid #000;
+                            border-radius: 8px;
+                            margin-top: 18px;
+
+                            button {
+                                flex: 1;
+                                padding: 10px;
+                                border: 1px solid transparent;
+                                color: #B1ACAC;
+                                border-radius: 8px;
+                                background-color: #ffffff;
+                                cursor: pointer;
+                            }
+
+                            button.active {
+                                border-color: #E17120;
+                                background-color: #ffffff;
+                                color: #E17120;
+                                margin: -1px;
+                                z-index: 100;
+                            }
+                        }
+                    }
+
+                    .hair-color {
+                        margin-top: 25px;
+
+
+                        label {
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
+
+                        .hair-color-options {
+                            display: flex;
+                            margin-top: 20px;
+                            flex-wrap: wrap;
+                            row-gap: 10px;
+
+                            .btn-container {
+                                width: 50%;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                gap: 13px;
+
+                            }
+
+                            button {
+                                width: 59px;
+                                height: 59px;
+                                border-radius: 8px;
+                                border: none;
+                                cursor: pointer;
+                            }
+
+                            button.selected,
+                            button:active {
+                                border: 2px solid #E17120;
+                            }
+
+                            button:hover {
+                                border: 2px solid #E17120;
+                            }
+
+                            span {
+                                font-size: 16px;
+                                font-weight: 700;
+                            }
+
+                            .blond {
+                                background-image: url('../images/blond.avif');
+                                background-position: center center;
+                                background-size: cover;
+                            }
+
+                            .rude {
+                                background-image: url('../images/rude.avif');
+                                background-position: center center;
+                                background-size: cover;
+                            }
+
+                            .ciemne {
+                                background-image: url('../images/ciemne.avif');
+                                background-position: center center;
+                                background-size: cover;
+                            }
+
+                            .ciemny-blond {
+                                background-image: url('../images/ciemnyblond.avif');
+                                background-position: center center;
+                                background-size: cover;
+                            }
+
+
+                        }
+                    }
+
+                    .lower-part {
+                        margin-top: 25px;
+                        display: grid;
+                        grid-template-columns: 50% 50%;
+                        column-gap: 24px;
+                        row-gap: 16px;
+
+                        .input-group {
+                            label {
+                                font-size: 16px;
+                                font-weight: 700;
+                            }
+
+                            .small-text {
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 17.57px;
+                                text-align: left;
+                                color: #535353;
+                            }
+
+                            .znak-zapytania{
+                                width: 21px;
+                                height: 21px;
+                                border: 1px solid #535353;
+                                border-radius: 4px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 14px;
+                            }
+
+                            .info-link{
+                                cursor: pointer;
+                            }
+
+
+                            input {
+                                margin-top: 8px;
+                                width: 100%;
+                                padding: 10px;
+                                border: none;
+                                background-color: #ECDDB780;
+                                border-radius: 8px;
+                            }
+
+                            .input-file{
+                                background-color: transparent;
+                                padding: 0px;
+                                border-radius: 0px;
+                                padding-top: 5px;
+                            }
+
+                            .input-dlugosc{
+                                max-width: 134px;
+                            }
+                        }
+
+                    }
+                    
+                    .submit-button {
+                        margin-top: 32px;
+                        width: 91px;
+                        height: 42px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #000;
+                        color: #fff;
+                        font-size: 16px;
+                        font-weight: 700;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                    }
+
+                }
+
+            }
+        }
+    }
+}

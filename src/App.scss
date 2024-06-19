@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+
+    .App-header {
+        width: 100%;
+        border-bottom: 1px solid #522C1026;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: inset 0 -2px 4px 0 rgba(60, 35, 18, 0.1);
+        background: linear-gradient(to bottom, #ffffff 51%, #F5EFEC 49%);
+    }
+
+    .App-main{
+        background: linear-gradient(180deg, rgba(161, 107, 76, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .Hair-trade-btn-one{
+        width: 145px;
+        height: 42px;
+        border-radius: 4px;
+        background-color: #1E1E1E;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 16px;
+    }
+}

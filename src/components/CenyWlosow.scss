@@ -1,0 +1,82 @@
+.Hair-trade-ceny-wlosow {
+    margin-top: 78px;
+    width: 1116px;
+
+    h2 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .two-columns {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .col-one {
+            grid-column: 1/2;
+            margin-top: 24px;
+
+            table {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid #C8BAB0;
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+
+
+                tr:nth-child(odd) {
+                    background-color: #C8BAB054;
+                }
+
+
+                th {
+                    background-color: #C8BAB0;
+                    font-size: 18px;
+                    font-weight: 900;
+                    height: 74px;
+                }
+
+
+                td {
+                    height: 44px;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 400;
+
+                    &:nth-child(odd) {
+                        border-right: 1px solid #C8BAB0;
+                    }
+                }
+            }
+        }
+
+        .col-two {
+            grid-column: 2/3;
+            padding-left: 95px;
+            margin-top: 24px;
+
+            h3 {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 28px;
+            }
+
+            p {
+                margin-top: 12px;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 28px;
+            }
+
+            button{
+                margin-top: 33px;
+            }
+
+        }
+    }
+
+    .jak-przebiega-sprzedaz{
+        margin-top: 130px;
+    }
+}

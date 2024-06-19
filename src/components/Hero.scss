@@ -1,0 +1,45 @@
+.Hair-trade-hero {
+    width: 1116px;
+    background-image: url(../images/ht-deco-hero.avif);
+    background-position: right center;
+    background-repeat: no-repeat;
+    margin-top: 45px;
+    padding-top: 49px;
+    padding-bottom: 49px;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #535353;
+    }
+
+    h1 {
+        font-family: Mulish;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 50.2px;
+        text-align: left;
+        margin-top: 16px;
+        color: #1E1E1E;
+    }
+
+    p {
+        font-family: Mulish;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        text-align: left;
+        margin-top: 25px;
+        color: #2B2B2B;
+    }
+
+    img {
+        transform: translate(0px, -5px);
+        max-width: 214px;
+    }
+    button{
+        margin-top: 25px;
+    }
+}

@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import CenyWlosow from './components/CenyWlosow';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import IleWarte from './components/IleWarte';
+import Metamorfoza from './components/Metamorfoza';
+import Uwaga from './components/Uwaga';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Header />
       </header>
+      <main className='App-main'>
+        <Hero />
+        <Metamorfoza />
+        <IleWarte />
+        <CenyWlosow />
+        <Uwaga />
+        <h2>MAIN</h2>
+      </main>
+      <footer className='App-footer'>
+        <h2>FOOTER</h2>
+      </footer>
     </div>
   );
 }

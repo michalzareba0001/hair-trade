@@ -1,0 +1,19 @@
+.Hair-trade-header{
+    width: 1116px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .Hair-trade-main-menu{
+        width: 60%;
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
