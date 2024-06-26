@@ -1,0 +1,59 @@
+.Hair-trade-kontakt{
+    width: 1116px;
+    margin-top: 157px;
+
+    h2{
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .contact-form-container{
+        margin-top: 57px;
+        padding-left: 95px;
+        padding-right: 95px;
+        display: flex;
+        flex-direction: row;
+        gap: 119px;
+
+        .kontakt-img{
+            border-radius: 8px;
+            max-height: 372px;
+        }
+
+        .contact-form{
+            
+            form {
+                display: flex;
+                flex-direction: column;
+                margin-top: 42px;
+              }
+              
+              div {
+                margin-bottom: 11px;
+              }
+              
+              label {
+                margin-bottom: 5px;
+                color: #535353;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            
+            input {
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #92867D;
+                min-width: 90%;
+            }
+              
+              button{
+                width: 91px;
+                height: 42px;
+                margin-top: 5px;
+              }
+        }
+    }
+
+
+}

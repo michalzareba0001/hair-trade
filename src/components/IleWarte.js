@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './IleWarte.scss'
 import postac1 from '../images/postac1.avif'
+import popupPhoto from '../images/slide2photo.avif'
 
 const IleWarte = () => {
     const [hairType, setHairType] = useState('Falisty');
@@ -9,6 +10,7 @@ const IleWarte = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState(null);
+    const [popup, setPopup] = useState(false);
 
 
 
@@ -24,6 +26,18 @@ const IleWarte = () => {
         setPhoto(event.target.files[0]);
     };
 
+    const handlePopup = () =>{
+        console.log('TU POPUP')
+        if (popup){
+            console.log('Popup NIEAKTYWNY')
+            setPopup(false)
+        }
+        else{
+            console.log('POPUP AKTYWNY')
+            setPopup(true)
+        }
+    }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -38,6 +52,15 @@ const IleWarte = () => {
     };
     return (
         <div className='Hair-trade-ile-warte'>
+            <div className={`ile-warte-popup ${popup ? 'popup-active' : ''}`}>
+                <div className='popup-content'>
+                    <div className='close-btn' onClick={handlePopup}>
+                        X
+                    </div>
+                    <img src={popupPhoto} alt='Zdjęcie włosów rozpuszczonych i spiętych' />
+                    <p>Zdjęcie (od strony pleców) suchych rozpuszczonych włosów oraz zdjęcie włosów spiętych w kucyk, z taśmą centymetrową, przyłożoną od zakładanej wysokości cięcia. Nasz ekspert dokona wizualnej oceny ich stanu i odpowiednio wyceni.</p>
+                </div>
+            </div>
             <div className='ile-warte-content'>
                 <div className='left'>
                     <h2>Ile warte są twoje włosy?</h2>
@@ -121,7 +144,7 @@ const IleWarte = () => {
                                 </div>
                                 <div className='input-group'>
                                     <label>Zdjęcie</label>
-                                    <span className='small-text info-link'>jak zrobić zdjęcie <span className='znak-zapytania'>?</span></span>
+                                    <span className='small-text info-link' onClick={handlePopup}>jak zrobić zdjęcie <span className='znak-zapytania'>?</span></span>
                                     <input
                                         className='input-file'
                                         type='file'

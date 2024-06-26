@@ -16,6 +16,9 @@ const Hero = () => {
             <button className='Hair-trade-btn-one'>
                 Sprawdź nas
             </button>
+            <div id='dla-kogo'>
+                
+            </div>
 
         </div>
     )

@@ -7,6 +7,7 @@ const CenyWlosow = () => {
             <div className='two-columns'>
                 <div className='col-one'>
                     <table cellPadding={0} cellSpacing={0}>
+                        <tbody>
                         <tr><th>Długość włosów</th><th>Cena</th></tr>
                         <tr><td>40-44 cm</td><td>4000- 5200 zł kg</td></tr>
                         <tr><td>45-49 cm</td><td>5000- 7000 zł kg</td></tr>
@@ -15,6 +16,7 @@ const CenyWlosow = () => {
                         <tr><td>60+ cm</td><td>8000- 12300 zł kg</td></tr>
                         <tr><td>70+ cm</td><td>9000- 15300 zł kg</td></tr>
                         <tr><td>80+ cm</td><td>9300- 20000 zł kg</td></tr>
+                        </tbody>
                     </table>
                 </div>
                 <div className='col-two'>
@@ -23,9 +25,12 @@ const CenyWlosow = () => {
                     <button className='Hair-trade-btn-one'>
                         Szybka wycena
                     </button>
+                    <div id='proces-sprzedazy'>
+                        
+                    </div>
                 </div>
             </div>
-            <h2 className='jak-przebiega-sprzedaz'>Jak przebiega sprzedaż?</h2>
+            <h2 className='jak-przebiega-sprzedaz' >Jak przebiega sprzedaż?</h2>
         </div>
 
     )

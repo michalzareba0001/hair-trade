@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+
 }
 
 .App {
@@ -24,10 +26,15 @@
         flex-direction: column;
         align-items: center;
         box-shadow: inset 0 -2px 4px 0 rgba(60, 35, 18, 0.1);
-        background: linear-gradient(to bottom, #ffffff 51%, #F5EFEC 49%);
+        position: fixed;
+        z-index: 999;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+        backdrop-filter: blur(3px);
+
     }
 
-    .App-main{
+    .App-main {
+        margin-top: 107px;
         background: linear-gradient(180deg, rgba(161, 107, 76, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
         width: 100%;
         display: flex;
@@ -35,13 +42,22 @@
         align-items: center;
     }
 
+    .App-footer {
+        width: 100%;
+    }
+
 
     a {
         text-decoration: none;
         color: inherit;
+        transition: all 500ms;
+
+        &:hover {
+            color: #E17120;
+        }
     }
 
-    .Hair-trade-btn-one{
+    .Hair-trade-btn-one {
         width: 145px;
         height: 42px;
         border-radius: 4px;
@@ -49,5 +65,52 @@
         color: #ffffff;
         font-weight: 700;
         font-size: 16px;
+        cursor: pointer;
+    }
+
+    @keyframes strobo {
+        0% {
+            background-color: #1E1E1E;
+            border-color: #1E1E1E;
+        }
+
+        15% {
+            background-color: #E17120;
+            border-color: #E17120;
+        }
+
+        35% {
+            background-color: #1E1E1E;
+            border-color: #1E1E1E;
+        }
+
+        50% {
+            background-color: #E17120;
+            border-color: #E17120;
+        }
+
+
+        100% {
+            background-color: #E17120;
+            border-color: #E17120;
+        }
+    }
+
+    .Hair-trade-btn-one:hover {
+        animation-name: strobo;
+        animation-duration: 600ms;
+        animation-fill-mode: forwards;
+    }
+}
+
+@media (max-width: 1116px) {
+    .App {
+
+        .App-header,
+        .App-main,
+        .App-footer {
+            width: 100vw;
+        }
+
     }
 }

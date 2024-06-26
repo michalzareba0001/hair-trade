@@ -1,21 +1,22 @@
-import React from 'react'
-import logo from '../images/hairtrade-logo.avif'
-import './Header.scss'
+import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
+import logo from '../images/hairtrade-logo.avif';
+import './Header.scss';
 
 const Header = () => {
   return (
     <div className='Hair-trade-header'>
-        <a href='#'><img src={logo} alt='hair trade logo' /></a> 
-        <nav className='Hair-trade-main-menu'>
-            <ul>
-               <li><a href='#proces-sprzedazy'>Proces sprzedaży</a></li>
-               <li><a href='#dla-kogo'>Dla kogo</a></li> 
-               <li><a href='#dlaczego-my'>Dlaczego my</a></li>
-               <li><a href='#putania-i-odpowiedzi'>Pytania i odpowiedzi</a></li>
-            </ul>
-        </nav>
+      <Link to='/'><img src={logo} alt='hair trade logo' /></Link> 
+      <nav className='Hair-trade-main-menu'>
+        <ul>
+          <li><Link to='/#proces-sprzedazy' onClick={() => console.log('Proces sprzedaży clicked')}>Proces sprzedaży</Link></li>
+          <li><Link to='/#dla-kogo'>Dla kogo</Link></li> 
+          <li><Link to='/#dlaczego-my'>Dlaczego my</Link></li>
+          <li><Link to='/#pytania-i-odpowiedzi'>Pytania i odpowiedzi</Link></li>
+        </ul>
+      </nav>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

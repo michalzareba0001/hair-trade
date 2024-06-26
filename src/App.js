@@ -1,29 +1,30 @@
 import './App.scss';
-import CenyWlosow from './components/CenyWlosow';
+import Footer from './components/Footer';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import IleWarte from './components/IleWarte';
-import Metamorfoza from './components/Metamorfoza';
-import Uwaga from './components/Uwaga';
+import HomePage from './pages/HomePage';
+import PolitykaPrywatnosci from './pages/PolitykaPrywatnosci';
+import Regulamin from './pages/Regulamin';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-      </header>
-      <main className='App-main'>
-        <Hero />
-        <Metamorfoza />
-        <IleWarte />
-        <CenyWlosow />
-        <Uwaga />
-        <h2>MAIN</h2>
-      </main>
-      <footer className='App-footer'>
-        <h2>FOOTER</h2>
-      </footer>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Header />
+        </header>
+        <main className='App-main'>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
+            <Route path="/regulamin" element={<Regulamin />} />
+          </Routes>
+        </main>
+        <footer className='App-footer'>
+          <Footer />
+        </footer>
+      </div>
+    </Router>
   );
 }
 
