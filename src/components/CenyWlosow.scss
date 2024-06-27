@@ -69,14 +69,79 @@
                 line-height: 28px;
             }
 
-            button{
+            button {
                 margin-top: 33px;
             }
 
         }
     }
 
-    .jak-przebiega-sprzedaz{
+    .jak-przebiega-sprzedaz {
         margin-top: 130px;
+    }
+}
+
+@media (max-width: 1116px) {
+    .Hair-trade-ceny-wlosow {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        .two-columns {
+            display: flex;
+            flex-direction: column;
+
+            .col-two {
+                padding-left: 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .Hair-trade-ceny-wlosow {
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-top: 24px;
+
+        h2 {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        h3{
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        p{
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .two-columns{
+            
+            .col-one{
+                table{
+                    th{
+                        font-size: 14px;
+                    }
+                    td{
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .col-two{
+                button{
+                    margin-top: 24px;
+                }
+            }
+        }
+
+        .jak-przebiega-sprzedaz{
+            margin-top: 29px;
+        }
+
     }
 }

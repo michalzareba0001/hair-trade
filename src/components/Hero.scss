@@ -33,6 +33,8 @@
         text-align: left;
         margin-top: 25px;
         color: #2B2B2B;
+        display: flex;
+        flex-direction: column;
     }
 
     img {
@@ -47,7 +49,56 @@
 @media (max-width: 1116px){
     .Hair-trade-hero{
         width: 100%;
-        background-position: right bottom;
+        background-position: calc(100% - 30px) bottom;
         background-size: 50%;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 767px){
+    .Hair-trade-hero{
+        align-items: center;
+        margin-top: 0px;
+        padding-top: 0px;
+        background-image: none;
+        padding-bottom: 26px;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        h4{
+            font-size: 10px;
+            margin-top: 26px;
+        }
+
+        h1{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            text-align: center;
+            margin-top: 0;
+        }
+        p{
+            font-size: 12px;
+            line-height: 15.06px;   
+        }
+        .deco-icon{
+            width: 138px;
+            align-self: flex-start;
+            transform: translate(0px, 0px)
+        }
+
+        .hero-img{
+            width: 100%;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        button{
+            margin-top: 0px;
+            align-self: flex-start;
+        }
     }
 }

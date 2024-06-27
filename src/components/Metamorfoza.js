@@ -31,9 +31,9 @@ const Metamorfoza = () => {
             <div className='Hair-trade-two-columns Hair-trade-content-box'>
                 <div className='col-one'>
                     <p className='metamorfoza-text'>Skontaktuj się z nami bo mało która osoba wie ile warte<br />
-                        są jej włosy. Dzięki nam nie tylko zmienisz swój wygląd<br />
-                        ale też uzyskasz środki na swoje wymarzone wakacje,<br />
-                        Kurs w którym zawsze chciałaś uczestniczyć ale<br />
+                        są jej włosy. Dzięki nam nie tylko zmienisz swój wygląd <br />
+                        ale też uzyskasz środki na swoje wymarzone wakacje, <br />
+                        kurs w którym zawsze chciałaś uczestniczyć ale <br />
                         brakowało środków z nami może być to:<br />
                     </p>
                     <div className='Hair-trade-two-columns-small metamorfoza-plus'>

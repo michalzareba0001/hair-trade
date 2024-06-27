@@ -38,5 +38,17 @@
 
     }
 
+}
 
+@media (max-width: 1116px){
+    .Hair-trade-dlaczego-warto{
+        width: 100%;
+        margin-top: 80px;
+        padding-left: 30px;
+        padding-right: 30px;
+        .kafle-grid{
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 24px;
+        }
+    }
 }

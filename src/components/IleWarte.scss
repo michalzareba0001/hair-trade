@@ -6,7 +6,7 @@
     align-items: center;
     position: relative;
 
-    .ile-warte-popup{
+    .ile-warte-popup {
         position: absolute;
         background-color: #ffffff;
         height: 430px;
@@ -19,12 +19,12 @@
         border: 1px solid #B1ACAC;
         transition: all 600ms;
 
-        .popup-content{
+        .popup-content {
             width: 100%;
             height: 100%;
             position: relative;
 
-            .close-btn{
+            .close-btn {
                 font-size: 16px;
                 font-weight: 700;
                 width: 24px;
@@ -40,15 +40,17 @@
                 cursor: pointer;
                 transition: all 500ms;
 
-                &:hover{
-                    color:#E17120;
+                &:hover {
+                    color: #E17120;
                     border: 1px solid #E17120;
                 }
             }
-            img{
+
+            img {
                 width: 100%;
             }
-            p{
+
+            p {
                 margin-top: 20px;
                 font-size: 14px;
                 font-weight: 400;
@@ -234,7 +236,7 @@
                                 color: #535353;
                             }
 
-                            .znak-zapytania{
+                            .znak-zapytania {
                                 width: 21px;
                                 height: 21px;
                                 border: 1px solid #535353;
@@ -245,16 +247,18 @@
                                 font-size: 14px;
                             }
 
-                            .info-link{
+                            .info-link {
                                 cursor: pointer;
                                 transition: all 600ms;
-                                span{
+
+                                span {
                                     transition: all 600ms;
                                 }
 
-                                &:hover{
+                                &:hover {
                                     color: #E17120;
-                                    span{
+
+                                    span {
                                         border-color: #E17120;
                                     }
                                 }
@@ -270,20 +274,20 @@
                                 border-radius: 8px;
                             }
 
-                            .input-file{
+                            .input-file {
                                 background-color: transparent;
                                 padding: 0px;
                                 border-radius: 0px;
                                 padding-top: 5px;
                             }
 
-                            .input-dlugosc{
+                            .input-dlugosc {
                                 max-width: 134px;
                             }
                         }
 
                     }
-                    
+
                     .submit-button {
                         margin-top: 32px;
                         width: 91px;
@@ -301,37 +305,43 @@
                     }
 
                     @keyframes strobo {
-                        0%{ 
-                            background-color: #1E1E1E;
-                            border-color: #1E1E1E;
-                         }
-                        15%{ 
-                            background-color: #E17120;
-                            border-color: #E17120;
-                        }
-                        35%{ 
-                            background-color: #1E1E1E;
-                            border-color: #1E1E1E; 
-                        }
-                        50%{ 
-                            background-color: #E17120;
-                            border-color: #E17120;
-                        }
-                        65%{ 
+                        0% {
                             background-color: #1E1E1E;
                             border-color: #1E1E1E;
                         }
-                        80%{ 
+
+                        15% {
                             background-color: #E17120;
                             border-color: #E17120;
                         }
-                        100%{ 
+
+                        35% {
+                            background-color: #1E1E1E;
+                            border-color: #1E1E1E;
+                        }
+
+                        50% {
+                            background-color: #E17120;
+                            border-color: #E17120;
+                        }
+
+                        65% {
+                            background-color: #1E1E1E;
+                            border-color: #1E1E1E;
+                        }
+
+                        80% {
+                            background-color: #E17120;
+                            border-color: #E17120;
+                        }
+
+                        100% {
                             background-color: #E17120;
                             border-color: #E17120;
                         }
                     }
-                
-                    .submit-button:hover{
+
+                    .submit-button:hover {
                         animation-name: strobo;
                         animation-duration: 600ms;
                         animation-fill-mode: forwards;
@@ -344,7 +354,156 @@
     }
 }
 
-.popup-active{
+.popup-active {
     z-index: 500 !important;
     opacity: 1 !important;
+}
+
+@media (max-width: 1116px) {
+    .Hair-trade-ile-warte {
+
+        .ile-warte-content {
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 30px;
+
+            .left {
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    max-height: 300px;
+                    width: auto;
+                    object-fit: contain;
+                    align-self: flex-end;
+                    margin-top: -150px;
+
+                }
+            }
+
+            .right {
+                .formularz {
+                    justify-content: center;
+
+                    .hair-value-form {
+                        max-width: 100%;
+                        width: 100%;
+                        padding: 28px 71px 28px 70px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .Hair-trade-ile-warte {
+        .ile-warte-popup{
+            width: 90%;
+            padding: 36px 15px;
+
+            .popup-content{
+                .close-btn{
+                    right: 0;
+                }
+            }
+        }
+
+        .ile-warte-content {
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-top: 8px;
+            padding-bottom: 220px;
+
+            .left {
+
+                h2 {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                img {
+                    margin-top: 0;
+                    margin-left: 0;
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+
+            .right {
+                margin-top: 30px;
+
+                .formularz {
+                    .hair-value-form {
+                        padding: 22px 30px 30px 30px;
+
+                        h2 {
+                            font-size: 16px;
+                            text-align: center;
+                        }
+
+                        .hair-type {
+                            label {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .hair-color {
+                            label {
+                                font-size: 14px;
+                            }
+
+                            .hair-color-options {
+                                span {
+                                    font-size: 12px;
+                                }
+
+                                button {
+                                    width: 44px;
+                                    height: 44px;
+                                }
+
+                            }
+                        }
+
+                        .lower-part{
+                            grid-template-columns: 100%;
+                            row-gap: 5px;
+
+                            .input-group{
+                                label{
+                                    font-size: 14px;
+                                }
+
+                                .small-text{
+                                    font-size: 12px;
+                                }
+
+                                .input-dlugosc{
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            
+        }
+    }
 }

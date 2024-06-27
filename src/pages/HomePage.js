@@ -12,7 +12,7 @@ import './HomePage.scss';
 const HomePage = () => {
   return (
     <div className='Hair-trade-home-page'>
-      <Hero />
+      <Hero/>
       <Metamorfoza />
       <IleWarte />
       <CenyWlosow />

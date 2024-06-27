@@ -101,6 +101,10 @@
         animation-duration: 600ms;
         animation-fill-mode: forwards;
     }
+
+    .mobile-only{
+        display: none;
+    }
 }
 
 @media (max-width: 1116px) {
@@ -112,5 +116,17 @@
             width: 100vw;
         }
 
+    }
+}
+
+@media(max-width: 767px){
+    .App{
+        .mobile-only{
+            display: block;
+        }
+
+        .App-main{
+            margin-top: 60px;
+        }
     }
 }

@@ -114,4 +114,86 @@
 
 .invisilbe{
     opacity: 0;
-} 
+}
+
+@media (max-width: 1116px){
+    .Hair-trade-metamorfoza{
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        .image-container{
+            background-position: right bottom;
+        }
+
+        .metamorfoza-text{
+
+            br{
+                display: none;
+            }
+        }
+
+        .Hair-trade-two-columns-small{
+            width: 600px;
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .Hair-trade-metamorfoza{
+        margin-top: 0px;
+        padding-bottom: 33px;
+        padding-left: 12px;
+        padding-right: 12px;
+        h2{
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        .Hair-trade-two-columns{
+            display: flex;
+            flex-direction: column-reverse;
+
+            .image-container{
+                min-height: 180px;
+                width: 100%;
+                background-position: center center;
+                background-size: contain;
+            }
+
+            .col-one{
+                .metamorfoza-text{
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                .Hair-trade-two-columns-small{
+                    width: 100%;
+                    grid-template-columns: 45% 55%;
+
+                    .col-one{
+                        h2{
+                            font-size: 20px;
+                        }
+                    }
+
+                    .col-two{
+                        ul{
+                            li{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+
+        .metamorfoza-plus{
+            margin-top: 0px;
+        }
+
+        button{
+            margin-top: 4px;
+        }
+    }
+}

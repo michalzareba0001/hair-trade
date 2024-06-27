@@ -29,11 +29,9 @@ const IleWarte = () => {
     const handlePopup = () =>{
         console.log('TU POPUP')
         if (popup){
-            console.log('Popup NIEAKTYWNY')
             setPopup(false)
         }
         else{
-            console.log('POPUP AKTYWNY')
             setPopup(true)
         }
     }
@@ -64,8 +62,8 @@ const IleWarte = () => {
             <div className='ile-warte-content'>
                 <div className='left'>
                     <h2>Ile warte są twoje włosy?</h2>
-                    <p>Prześlij nam podstawowe dane, a my wstępnie<br />
-                        oszacujemy ile pieniędzy możesz otrzymać za swoje<br /> włosy</p>
+                    <p>Prześlij nam podstawowe dane, a my wstępnie <br />
+                        oszacujemy ile pieniędzy możesz otrzymać za swoje <br /> włosy</p>
                     <img src={postac1} alt='ruda dziewczyna z długimi włosami' />
                 </div>
                 <div className='right'>

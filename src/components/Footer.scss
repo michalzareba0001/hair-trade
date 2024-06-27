@@ -60,3 +60,29 @@
         }
     }
 }
+
+@media (max-width: 1116px){
+    .Hair-trade-footer{
+        margin-top: 70px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .footer-grid{
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 30px;
+
+            .footer-col:nth-child(1){
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            .footer-col:nth-child(5){
+                grid-column: 3/4;
+                grid-row: 2/3;
+            }
+        }
+    }
+}

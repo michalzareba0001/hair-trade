@@ -29,3 +29,78 @@
         }
     }
 }
+
+@media (max-width: 767px){
+    .Hair-trade-header{
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        position: relative;
+        background-color: #C2B3A7;
+
+        img{
+            width: 130px;
+        }
+        
+        .Hair-trade-main-menu{
+            position: absolute;
+            top: 60px;
+            left: 0;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: #C2B3A7;
+            width: 100vw;
+            height: 0px;
+            overflow: hidden;
+            transition: all 600ms;
+
+            ul{
+                flex-direction: column;
+                align-items: center;
+                row-gap: 10px;
+            }
+        }
+
+        .menu-active{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            height: 150px;
+        }
+
+        .hamburger-menu{
+            margin-right: 27px;
+
+            .bar1,
+            .bar2,
+            .bar3{
+                width: 18px;
+                height: 2px;
+                background-color: #000000;
+                border-radius: 2px;
+                transition: all 600ms;
+            }
+
+            .bar2,
+            .bar3{
+                margin-top: 5px;
+            }
+
+        }
+
+        .hamburger-menu-active{
+            .bar1{
+                transform: rotate(-45deg) translate(-5px, 5px);
+            }
+            .bar2{
+                opacity: 0;
+            }
+            .bar3{
+                transform: rotate(45deg) translate(-5px, -5px);
+            }
+        }
+
+
+    }
+}
