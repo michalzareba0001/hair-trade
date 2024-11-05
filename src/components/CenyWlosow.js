@@ -22,9 +22,9 @@ const CenyWlosow = () => {
                 <div className='col-two'>
                     <h3>Dlaczego Cena włosów o tej samej długości tak bardzo się różni?</h3>
                     <p>Każdy z nas jest wyjątkowy, dlatego nasze włosy się różnią! Włosy z jednego cięcia wyceniamy indywidualnie. Na cenę włosów mają wpływ takie czynniki jak: długość, kolor, porowatość, puszystość lub jej brak, suchość, rozdwojone lub całe końcówki, a także, czy włosy są żywe, czy wyglądają na „martwe”. Cena włosów jasnych oraz blond zawsze jest wyższa.</p>
-                    <button className='Hair-trade-btn-one'>
+                    <a href='#szybka-wycena'><button className='Hair-trade-btn-one'>
                         Szybka wycena
-                    </button>
+                    </button></a>
                     <div id='proces-sprzedazy'>
                         
                     </div>

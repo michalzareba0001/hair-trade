@@ -53,14 +53,15 @@ const Metamorfoza = () => {
                             </div>
                         </div>
                     </div>
-                    <button className='Hair-trade-btn-one'>
+                    <a href='#proces-sprzedazy'><button className='Hair-trade-btn-one'>
                         Jak działamy
                     </button>
+                    </a>
                 </div>
                 <div className='col-two image-container'>
-                    {/* Tu możesz dodać obrazek */}
                 </div>
             </div>
+            <div id='szybka-wycena'></div>
         </div>
     );
 }

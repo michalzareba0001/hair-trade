@@ -17,7 +17,6 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
-            <Route path="/regulamin" element={<Regulamin />} />
           </Routes>
         </main>
         <footer className='App-footer'>

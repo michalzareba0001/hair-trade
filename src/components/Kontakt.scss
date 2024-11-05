@@ -1,77 +1,115 @@
-.Hair-trade-kontakt{
-    width: 1116px;
-    margin-top: 157px;
+.Hair-trade-kontakt {
+  width: 1116px;
+  margin-top: 157px;
 
-    h2{
-        font-size: 32px;
-        font-weight: 700;
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .contact-form-container {
+    margin-top: 57px;
+    padding-left: 95px;
+    padding-right: 95px;
+    display: flex;
+    flex-direction: row;
+    gap: 119px;
+
+    .kontakt-img {
+      border-radius: 8px;
+      max-height: 372px;
     }
 
-    .contact-form-container{
-        margin-top: 57px;
-        padding-left: 95px;
-        padding-right: 95px;
+    .contact-form {
+
+      form {
         display: flex;
-        flex-direction: row;
-        gap: 119px;
+        flex-direction: column;
+        margin-top: 42px;
+      }
 
-        .kontakt-img{
-            border-radius: 8px;
-            max-height: 372px;
-        }
+      div {
+        margin-bottom: 11px;
+      }
 
-        .contact-form{
-            
-            form {
-                display: flex;
-                flex-direction: column;
-                margin-top: 42px;
-              }
-              
-              div {
-                margin-bottom: 11px;
-              }
-              
-              label {
-                margin-bottom: 5px;
-                color: #535353;
-                font-size: 14px;
-                font-weight: 400;
-            }
-            
-            input {
-                padding: 10px;
-                border: none;
-                border-radius: 5px;
-                background-color: #92867D;
-                min-width: 90%;
-            }
-              
-              button{
-                width: 91px;
-                height: 42px;
-                margin-top: 5px;
-              }
-        }
+      label {
+        margin-bottom: 5px;
+        color: #535353;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      input {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #92867D;
+        min-width: 90%;
+      }
+
+      button {
+        width: 91px;
+        height: 42px;
+        margin-top: 5px;
+      }
     }
+  }
 
 
 }
 
-@media (max-width: 1116px){
-  .Hair-trade-kontakt{
+@media (max-width: 1116px) {
+  .Hair-trade-kontakt {
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
 
-    .contact-form-container{
+    .contact-form-container {
       padding-left: 0px;
       padding-right: 0px;
       gap: 30px;
 
-      .kontakt-img{
+      .kontakt-img {
         max-width: 50%;
         object-fit: cover;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .Hair-trade-kontakt {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 24px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .contact-form-container {
+      flex-direction: column;
+      margin-top: 23px;
+
+      .kontakt-img {
+        max-width: 100%;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+
+
+        h3 {
+          font-size: 16px;
+        }
+
+        form {
+          width: 90%;
+          align-self: center;
+          margin-top: 12px;
+        }
       }
     }
 

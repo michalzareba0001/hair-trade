@@ -4,11 +4,22 @@ import arrowLeft from '../images/arrowleft.svg';
 import arrowRight from '../images/arrowright.svg';
 import slide2photo from '../images/slide2photo.avif';
 import slide3photo from '../images/slide3photo.avif';
+import slide2photopo from '../images/slide2photopo.avif'
 
 const Formularz = () => {
+    const [sciecie, setSciecie] = useState(true)
+
+    const poscieciu = () => {
+        setSciecie(false)
+    }
+
+    const przedscieciem = () => {
+        setSciecie(true)
+    }
+
     const [step, setStep] = useState(1);
     const [form, setForm] = useState({
-        name: '',
+        firstName: '',
         phone: '',
         preferredTime: ''
     });
@@ -48,15 +59,36 @@ const Formularz = () => {
     }
 
     const handleSubmit = (e) => {
-        console.log('FORMULARZ WYSŁANY')
-
         e.preventDefault();
-        console.log(form);
-        if (file) {
-            console.log('Uploaded file:', file);
-        }
+
+        const fd = new FormData();
+        fd.append('firstName', form.firstName);
+        fd.append('phone', form.phone);
+        fd.append('preferredTime', form.preferredTime);
+        fd.append('file', file);
+
+        fetch('http://hairtrade.scharmach.pl/contact2.php', {
+            mode: 'no-cors',
+            method: 'POST',
+            body: fd,
+            data: fd
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Wystąpił błąd podczas wysyłania formularza');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Odpowiedź serwera:', data.error);
+                // Wykonaj odpowiednie działania po wysłaniu formularza
+                alert('Formularz został wysłany');
+            })
+            .catch((error) => {
+                console.error('Wystąpił błąd podczas wysyłania formularza:', error);
+            });
     };
-    
+
     const handleSendFormClick = (e) => {
         handleSubmit(e);
         nextstep();
@@ -65,14 +97,14 @@ const Formularz = () => {
     return (
         <div className='Hair-trade-formularz'>
             <div className='choose-form'>
-                <button className='white-btn'>Jestem przed ścięciem</button>
-                <button className='white-btn'>Jestem po ścięciu</button>
+                <button className={`white-btn ${sciecie ? 'active-btn' : ''}`} onClick={przedscieciem}>Jestem przed ścięciem</button>
+                <button className={`white-btn ${!sciecie ? 'active-btn' : ''}`} onClick={poscieciu}>Jestem po ścięciu</button>
             </div>
             <div className='przed-scieciem'>
                 <form onSubmit={preventSubmit}>
                     <div className='top'>
                         <div className='left'>
-                            <h3>Jestem przed ścięciem</h3>
+                            <h3>{sciecie ? 'Jestem przed ścięciem' : 'Jestem po ścięciu'}</h3>
                         </div>
                         <div className='middle-top'>
                             <div className='krok'><span>Krok {step}</span></div>
@@ -87,28 +119,31 @@ const Formularz = () => {
                             </div>
                             <div className='right-slide'>
                                 <div>
-                                    <label>Podaj Imię</label><br/>
+                                    <label>Podaj Imię</label><br />
                                     <input
                                         type="text"
-                                        name="name"
-                                        value={form.name}
+                                        name="firstName"
+                                        aria-label='Imię'
+                                        value={form.firstName}
                                         onChange={handleChange}
                                     />
                                 </div>
                                 <div>
-                                    <label>Podaj numer telefonu</label><br/>
+                                    <label>Podaj numer telefonu</label><br />
                                     <input
-                                        type="text"
+                                        type="tel"
                                         name="phone"
+                                        aria-label='Numer telefonu'
                                         value={form.phone}
                                         onChange={handleChange}
                                     />
                                 </div>
                                 <div>
-                                    <label>Preferowana godzina kontaktu</label><br/>
+                                    <label>Preferowana godzina kontaktu</label><br />
                                     <input
-                                        type="text"
+                                        type="time"
                                         name="preferredTime"
+                                        aria-label='Preferowana godzina kontaktu'
                                         value={form.preferredTime}
                                         onChange={handleChange}
                                     />
@@ -117,17 +152,18 @@ const Formularz = () => {
                         </div>
                         <div className={`slide slide-two ${step === 2 ? 'slide-active' : ''}`}>
                             <div className='left-slide'>
-                                <p>Wyślij nam zdjęcie twoich włosów nasz ekspert dokona wstępnej wyceny i oceny towjich włosów</p>
+                                <p>{sciecie ? 'Wyślij nam zdjęcie twoich włosów nasz ekspert dokona wstępnej wyceny i oceny towjich włosów' : 'Prześlij nam zdjęcie swojego już obciętego kucyka (warkocza), zrobione przy dobrym oświetleniu, z miarką, taśmą mierniczą lub linijką na blacie oraz na wadze.'}</p>
                                 <input
                                     className='input-file'
+                                    aria-label='Załaduj zdjęcie'
                                     type='file'
                                     onChange={handleFileChange}
                                 />
                             </div>
                             <div className='right-slide'>
-                                <img src={slide2photo} alt='Długie włosy od tyłu, rozpuszczone i spięte' />
+                                <img src={sciecie ? slide2photo : slide2photopo} alt='Włosy przygotowane do wysyłki' />
                                 <p>
-                                Zdjęcie (od strony pleców) suchych rozpuszczonych włosów oraz zdjęcie włosów spiętych w kucyk, z taśmą centymetrową, przyłożoną od zakładanej wysokości cięcia.
+                                    {sciecie ? 'Zdjęcie (od strony pleców) suchych rozpuszczonych włosów oraz zdjęcie włosów spiętych w kucyk, z taśmą centymetrową, przyłożoną od zakładanej wysokości cięcia.' : ''}
                                 </p>
                             </div>
                         </div>
@@ -137,22 +173,21 @@ const Formularz = () => {
                             </div>
                             <div className='right-slide'>
                                 <img src={slide3photo} alt='obcięte włosy' />
-                                <p>
-                                Bardzo ważne jest prawidłowe obcięcie włosów, gdyż niewłaściwie ścięte włosy są po prostu odpadem technologicznym. Dlatego nasz menedżer obowiązkowo poprowadzi cały proces obcinania włosów w trybie online.
+                                <p>{sciecie ? 'Bardzo ważne jest prawidłowe obcięcie włosów, gdyż niewłaściwie ścięte włosy są po prostu odpadem technologicznym. Dlatego nasz menedżer obowiązkowo poprowadzi cały proces obcinania włosów w trybie online.' : 'Nasz ekspert dokona oceny i określi wartość Twoich włosów z uwzględnieniem ich koloru, długości, wagi i struktury.'}
                                 </p>
                             </div>
                         </div>
                         <div className={`slide slide-four ${step === 4 ? 'slide-active' : ''}`}>
                             <div className='left-slide'>
-                                <p>Sporządź umowę w dwóch jednobrzmiących kopiach (wzór do pobrania) wypisaną i podpisaną umowę i kopię kupna - sprzedaży umieść w paczce z włosami. Po ekspertyzie i wycenie uzupełnimy skupu w umowie i podpisaną kopię odeślemy z powrotem do Ciebie</p>
+                                <p>Sporządź umowę w dwóch jednobrzmiących kopiach (wzór do pobrania) wypisaną i podpisaną umowę i kopię kupna - sprzedaży umieść w paczce z włosami. Po ekspertyzie i wycenie uzupełnimy cenę skupu w umowie i podpisaną kopię odeślemy z powrotem do Ciebie</p>
                                 <button className='pobierz-umowe'>Pobierz umowę</button>
                             </div>
                             <div className='right-slide'>
                                 <p className='big-text'>
-                                Spakuj włosy i dwa egzemplarze wypełnionej umowy i prześlij je do nas
+                                    Spakuj włosy i dwa egzemplarze wypełnionej umowy i prześlij je do nas
                                 </p>
                                 <p className='small-text'>
-                                Instrukcja Spakowania włosów do wysyłki
+                                    Instrukcja Spakowania włosów do wysyłki
                                 </p>
                                 <button className='pobierz-instrukcje'>Instrukcja</button>
                             </div>
@@ -160,7 +195,7 @@ const Formularz = () => {
                         <div className={`slide slide-five ${step === 5 ? 'slide-active' : ''}`}>
                             <div className='left-slide'>
                                 <p>Otrzymane włosy poddane są ekspertyzie cena uzgadniana jest z klientem po akceptacji ceny środki zostają przelane z podane konto Bankowe a kopia umowy odesłana pocztą</p>
-                                <h4>Transakcja dobiega końca :) Dziękujemy</h4>
+                                <h4>Formularz został wysłany :) Dziękujemy</h4>
                             </div>
                             <div className='right-slide'>
                             </div>
@@ -193,6 +228,7 @@ const Formularz = () => {
                                     type="range"
                                     id="rangeSlider"
                                     name="rangeSlider"
+                                    aria-label='Wskaźnik postępu'
                                     min="1"
                                     max="5"
                                     value={step}

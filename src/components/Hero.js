@@ -1,9 +1,19 @@
-import React from 'react'
-import './Hero.scss'
-import deco from '../images/ht-deco.avif'
-import heroImg from '../images/ht-deco-hero.avif'
+import React, { useEffect } from 'react';
+import './Hero.scss';
+import deco from '../images/ht-deco.avif';
+import heroImg from '../images/ht-deco-hero.avif';
+import heroImgSmall from '../images/ht-deco-hero-small.avif';
 
 const Hero = () => {
+    useEffect(() => {
+        // Preload heroImg and heroImgSmall using new Image objects
+        const imgLarge = new Image();
+        imgLarge.src = heroImg;
+
+        const imgSmall = new Image();
+        imgSmall.src = heroImgSmall;
+    }, []);
+
     return (
         <div className='Hair-trade-hero'>
             <h4>Profesjonalny skup włosów</h4>
@@ -14,21 +24,23 @@ const Hero = () => {
             zmienić swój styl i uzyskać wynagrodzenie.<br/>
             Już od 40 cm długości
             
-            <img src={deco} alt="deco icon" className='deco-icon' />
+            <img src={deco} alt="deco icon" className='deco-icon'/>
             </p>
             <div className='mobile-only'>
-                <img src={heroImg} alt='modelka z rozpuszczonymi włosami' className='hero-img'/>
-
+                <picture>
+                    <source srcSet={heroImgSmall} media="(max-width: 767px)" />
+                    <source srcSet={heroImg} media="(min-width: 768px)" />
+                    <img src={heroImg} alt='modelka z rozpuszczonymi włosami' className='hero-img'/>
+                </picture>
             </div>
-            <button className='Hair-trade-btn-one'>
-                Sprawdź nas
-            </button>
-            <div id='dla-kogo'>
-                
-            </div>
-
+            <a href='#proces-sprzedazy' className='button-link'>
+                <button className='Hair-trade-btn-one'>
+                    Sprawdź nas
+                </button>
+            </a>
+            <div id='dla-kogo'></div>
         </div>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;

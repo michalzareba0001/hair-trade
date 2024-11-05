@@ -24,7 +24,7 @@ const Header = () => {
           <li><Link to='/#proces-sprzedazy' onClick={() => console.log('Proces sprzedaży clicked')}>Proces sprzedaży</Link></li>
           <li><Link to='/#dla-kogo'>Dla kogo</Link></li>
           <li><Link to='/#dlaczego-my'>Dlaczego my</Link></li>
-          <li><Link to='/#pytania-i-odpowiedzi'>Pytania i odpowiedzi</Link></li>
+          <li><Link to='/#pytania-i-odpowiedzi'>Kontakt</Link></li>
         </ul>
       </nav>
       <div className='mobile-only'>

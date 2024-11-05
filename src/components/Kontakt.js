@@ -4,7 +4,7 @@ import KontaktImg from '../images/kontakt-img.avif'
 
 const Kontakt = () => {
     const [form, setForm] = useState({
-        name: '',
+        firstName: '',
         phone: '',
         preferredTime: ''
     });
@@ -17,10 +17,35 @@ const Kontakt = () => {
         });
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission
-        console.log(form);
+
+        const fd = new FormData();
+        fd.append('firstName', form.firstName);
+        fd.append('phone', form.phone);
+        fd.append('preferredTime', form.preferredTime);
+
+        fetch('http://hairtrade.scharmach.pl/contact3.php', {
+            mode: 'no-cors',
+            method: 'POST',
+            body: fd,
+            data: fd
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Wystąpił błąd podczas wysyłania formularza');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Odpowiedź serwera:', data.error);
+                // Wykonaj odpowiednie działania po wysłaniu formularza
+                alert('Formularz został wysłany');
+            })
+            .catch((error) => {
+                console.error('Wystąpił błąd podczas wysyłania formularza:', error);
+            });
     };
 
     return (
@@ -35,27 +60,33 @@ const Kontakt = () => {
                             <label>Podaj Imię</label>
                             <input
                                 type="text"
-                                name="name"
-                                value={form.name}
+                                name="firstName"
+                                aria-label='Imię'
+                                value={form.firstName}
                                 onChange={handleChange}
+                                required
                             />
                         </div>
                         <div>
                             <label>Podaj numer telefonu</label>
                             <input
-                                type="text"
+                                type="tel"
                                 name="phone"
+                                aria-label='Numer telefonu'
                                 value={form.phone}
                                 onChange={handleChange}
+                                required
                             />
                         </div>
                         <div>
                             <label>Preferowana godzina kontaktu</label>
                             <input
-                                type="text"
+                                type="time"
                                 name="preferredTime"
+                                aria-label='Preferowana godzina kontaktu'
                                 value={form.preferredTime}
                                 onChange={handleChange}
+                                required
                             />
                         </div>
                         <button type="submit" className='Hair-trade-btn-one'>Wyślij</button>
