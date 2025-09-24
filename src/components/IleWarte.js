@@ -170,6 +170,7 @@ const IleWarte = () => {
                                         type='number'
                                         value={hairLength}
                                         onChange={(e) => setHairLength(e.target.value)}
+                                        required
                                     />
                                 </div>
                                 <div className='input-group'>
@@ -180,6 +181,7 @@ const IleWarte = () => {
                                         aria-label='Załaduj zdjęcie'
                                         type='file'
                                         onChange={handlePhotoUpload}
+                                        required
                                     />
                                 </div>
                                 <div className='input-group'>
@@ -189,6 +191,7 @@ const IleWarte = () => {
                                         aria-label='Numer telefonu'
                                         value={phoneNumber}
                                         onChange={(e) => setPhoneNumber(e.target.value)}
+                                        required
                                     />
                                 </div>
                                 <div className='input-group'>
@@ -198,6 +201,7 @@ const IleWarte = () => {
                                         aria-label='Imię'
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
+                                        required
                                     />
                                 </div>
                             </div>

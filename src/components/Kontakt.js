@@ -86,6 +86,7 @@ const Kontakt = () => {
                                 aria-label='Preferowana godzina kontaktu'
                                 value={form.preferredTime}
                                 onChange={handleChange}
+                                class='time-input'
                                 required
                             />
                         </div>

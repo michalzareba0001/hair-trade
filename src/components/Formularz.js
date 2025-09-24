@@ -146,6 +146,7 @@ const Formularz = () => {
                                         aria-label='Preferowana godzina kontaktu'
                                         value={form.preferredTime}
                                         onChange={handleChange}
+                                        className='time-input'
                                     />
                                 </div>
                             </div>
