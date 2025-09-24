@@ -1,4 +1,4 @@
-#Hairtrade
+<h1>Hairtrade</h1>
 
 A modern one-page website built with React.js for a professional hair trading service. Featuring elegant design, interactive valuation forms, and SCSS styling, the site is optimized for speed, simplicity, and a seamless user experience across all devices.
 
